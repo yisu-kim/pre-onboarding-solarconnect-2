@@ -2,7 +2,6 @@
 import React from 'react';
 
 function DescendingSort(props) {
-  console.log(props);
   const arr = [...props.numbers];
   let result = arr.slice();
 

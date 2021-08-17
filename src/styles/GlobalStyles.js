@@ -17,6 +17,12 @@ export const GlobalStyles = createGlobalStyle`
         font-size: 14px;
         background-color: #fff;
         color: #000;
+        display: flex;
+        width: 1000px;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+        padding-top: 80px;
     }
     input, button {
         background-color: transparent;
