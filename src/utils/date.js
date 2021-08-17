@@ -1,9 +1,15 @@
 import { TIMEZONE } from './constants';
 
-export const getFullLocaleDate = (date, locale) => {
-  return date.toLocaleString(locale, {
+export const getLocaleDate = (date, locale) => {
+  return date.toLocaleDateString(locale, {
     timeZone: TIMEZONE,
     dateStyle: 'full',
-    timeStyle: 'long',
+  });
+};
+
+export const getLocaleTime = (date, locale) => {
+  return date.toLocaleTimeString(locale, {
+    timeZone: TIMEZONE,
+    timeStyle: 'medium',
   });
 };
