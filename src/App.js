@@ -1,5 +1,6 @@
 import React, { useCallback, useState } from 'react';
 import { LOCALE } from 'utils/constants';
+import Clock from 'components/Date/Clock';
 import LocaleTimer from 'components/Date/LocaleTimer';
 import InputForm from 'components/InputForm';
 import AscendingSort from 'components/Sort/AscendingSort';
@@ -28,7 +29,8 @@ function App() {
 
   return (
     <div>
-      <LocaleTimer date={date} locale={LOCALE.koKR} handleDate={handleDate} />
+      <Clock handleDate={handleDate} />
+      <LocaleTimer date={date} locale={LOCALE.koKR} />
       <InputForm
         inputNumbers={inputNumbers}
         handleChange={handleChange}
