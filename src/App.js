@@ -8,7 +8,7 @@ import DescendingSort from 'components/Sort/DescendingSort';
 
 function App() {
   const [date, setDate] = useState(new Date());
-  const [inputNumbers, setInputNumbers] = useState([]);
+  const [inputNumbers, setInputNumbers] = useState('');
   const [numbers, setNumbers] = useState([]);
 
   const handleDate = useCallback(() => {
