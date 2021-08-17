@@ -1,6 +1,12 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
+import PropTypes from 'prop-types';
 import { ResultContent, ResultTitle } from './SortStyle';
+
+DescendingSort.propTypes = {
+  numbers: PropTypes.array,
+  showDescending: PropTypes.bool,
+};
 
 function DescendingSort(props) {
   const arr = [...props.numbers];
