@@ -1,8 +1,9 @@
 ## 프로젝트 소개
+
 ![ci](https://user-images.githubusercontent.com/66353903/129700725-98afe8db-bb0c-4d06-bc30-e75bda55eb52.png)
 
-
 ### 프리온보딩 코스 Solar Connect 기업 과제
+
 > ❕ **숫자를 string으로 입력받고 버튼을 누르면 sorting 결과를 나타내는 기능 구현하기**❗
 
 <br/>
@@ -36,19 +37,24 @@
 5.4 상기 조건을 제외한 모든 부분들은 작성자 편의에 맞게 구현합니다.<br/><br/>
 </div>
 </details>
-<br/>
+<br/><br/>
+
+## 🚀 배포
+
+Demo Link: https://solar-connect-sorting-machine.netlify.app
+<br/><br/>
 
 ## 🗂 구현 목록
 
 `타이머`
 
-- getLocalDate() 내장 함수를 통해 한국, 미국 날짜 표기
-- getLocalTime() 내장 함수를 통해 한국, 미국 시간 표기
+- toLocaleDateString() 자바스크립트 내장 함수를 통해 한국, 미국 날짜 표기
+- toLocaleTimeString() 자바스크립트 내장 함수를 통해 한국, 미국 시간 표기
 
 `입력`
 
-- 모든 데이터를 정수로 입력받고 ,(쉼표)로 숫자를 구분
-- 정수 이외의 입력데이터는 예외처리
+- 입력 데이터는 정수로 가정하고 쉼표(,) 및 모든 문자열로 숫자를 구분
+- 숫자는 두 개 이상 입력하도록 검증
 
 `시작`
 
@@ -60,9 +66,8 @@
 
 - 입력된 데이터는 ex) 1, 9, 45, 3, 2 와 같이 구분되어 나타남
 - 오름차순, 내림차순 순서로 렌더링되어 화면에 나타남
-- filter, sort 내장함수를 사용하지 않고 정렬기능 구현        
-
-<br/><br/>
+- filter, sort 내장함수를 사용하지 않고 정렬기능 구현
+  <br/><br/>
 
 ## 💁🏻‍♂ 실행 방법
 
@@ -75,7 +80,15 @@
 `npm start`
 <br/><br/>
 
-        
+## 😀 멤버
+
+| 이름   | 담당                                            |
+| ------ | ----------------------------------------------- |
+| 김이수 | 한국/미국 지역시간 타이머, 입력 필드, 시작 버튼 |
+| 김은태 | 오름차순/내림차순 정렬 결과, 화면 UI            |
+
+<br/><br/>
+
 ## 📄 참고 자료
 
 날짜, 시간 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/toLocaleString<br/><br/>
