@@ -1,8 +1,8 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
+import { ResultContent } from './SortStyle';
 
 function DescendingSort(props) {
-  console.log(props);
   const arr = [...props.numbers];
   let result = arr.slice();
 
@@ -16,7 +16,7 @@ function DescendingSort(props) {
     }
   }
 
-  return <div>{result}</div>;
+  return <ResultContent>내림차순: {result.join(', ')}</ResultContent>;
 }
 
 export default DescendingSort;

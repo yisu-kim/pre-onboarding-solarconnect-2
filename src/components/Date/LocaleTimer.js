@@ -1,6 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { getLocaleDate, getLocaleTime } from 'utils/date';
+import {
+  Contents,
+  DateContent,
+  TimeContent,
+} from 'components/Date/LocaleTimerStyle';
 
 LocaleTimer.propTypes = {
   date: PropTypes.instanceOf(Date),
@@ -9,10 +14,10 @@ LocaleTimer.propTypes = {
 
 function LocaleTimer({ date, locale }) {
   return (
-    <>
-      <p>{getLocaleDate(date, locale)}</p>
-      <p>{getLocaleTime(date, locale)}</p>
-    </>
+    <Contents>
+      <DateContent>{getLocaleDate(date, locale)}</DateContent>
+      <TimeContent>{getLocaleTime(date, locale)}</TimeContent>
+    </Contents>
   );
 }
 
