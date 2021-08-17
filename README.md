@@ -40,26 +40,27 @@
 
 `타이머`
 
-- sample
+- getLocalDate() 내장 함수를 통해 한국, 미국 날짜 표기
+- getLocalTime() 내장 함수를 통해 한국, 미국 시간 표기
 
 `입력`
 
-- sample
+- 모든 데이터를 정수로 입력받고 ,(쉼표)로 숫자를 구분
+- 정수 이외의 입력데이터는 예외처리
 
 `시작`
 
-- sample
+- Sort 버튼 클릭 시 2개의 Sort함수가 호출
+- Sort가 시작된 후 오름차순 렌더링, 3초후에 내림차순 렌더링
+- 버블정렬을 이용하여 정렬 기능 구현
 
 `결과`
 
-- sample
-        
+- 입력된 데이터는 ex) 1, 9, 45, 3, 2 와 같이 구분되어 나타남
+- 오름차순, 내림차순 순서로 렌더링되어 화면에 나타남
+- filter, sort 내장함수를 사용하지 않고 정렬기능 구현        
 
-`기타조건`
-
-- sample
-
-<br/>
+<br/><br/>
 
 ## 👨‍💻 실행 방법
 
@@ -70,5 +71,10 @@
 ### 실행
 
 `npm start`
+<br/><br/>
 
+        
+## 📄 참고 자료
 
+날짜, 시간 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/toLocaleString<br/><br/>
+정렬 알고리즘 - https://velog.io/@young_mason/Algorithm-%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-Sorting-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-Basic%ED%8E%B8
