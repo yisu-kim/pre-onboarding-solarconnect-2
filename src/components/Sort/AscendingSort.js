@@ -5,7 +5,6 @@ import { ResultContent, ResultTitle } from './SortStyle';
 
 AscendingSort.propTypes = {
   numbers: PropTypes.array,
-  showDescending: PropTypes.bool,
 };
 
 function AscendingSort(props) {
