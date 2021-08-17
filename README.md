@@ -1,6 +1,8 @@
-## 📌 프로젝트 소개
+## 프로젝트 소개
+![ci](https://user-images.githubusercontent.com/66353903/129700725-98afe8db-bb0c-4d06-bc30-e75bda55eb52.png)
 
-###  프리온보딩 코스 Solar Connect 기업 과제
+
+### 프리온보딩 코스 Solar Connect 기업 과제
 > ❕ **숫자를 string으로 입력받고 버튼을 누르면 sorting 결과를 나타내는 기능 구현하기**❗
 
 <br/>
@@ -36,7 +38,7 @@
 </details>
 <br/>
 
-## 📑 구현 목록
+## 🗂 구현 목록
 
 `타이머`
 
@@ -62,7 +64,7 @@
 
 <br/><br/>
 
-## 👨‍💻 실행 방법
+## 💁🏻‍♂ 실행 방법
 
 ### 설치
 
