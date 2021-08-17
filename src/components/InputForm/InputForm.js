@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import style from './InputFormStyle';
 
 InputForm.propTypes = {
-  inputNumbers: PropTypes.array,
+  inputNumbers: PropTypes.string,
   handleChange: PropTypes.func,
   handleSubmit: PropTypes.func,
 };

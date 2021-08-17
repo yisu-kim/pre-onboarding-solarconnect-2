@@ -16,14 +16,13 @@ function App() {
   }, []);
 
   const handleChange = (e) => {
-    // TO DO : 예외처리 추가
-    const numbers = e.target.value.split(',');
-    setInputNumbers(numbers);
+    setInputNumbers(e.target.value);
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setNumbers(inputNumbers);
+
+    setNumbers(checkInputNumbers(inputNumbers));
     setInputNumbers([]);
   };
 
@@ -44,3 +43,7 @@ function App() {
 }
 
 export default App;
+
+const checkInputNumbers = (inputNumbers) => {
+  return inputNumbers.match(/\d+/g).map((number) => parseInt(number));
+};
