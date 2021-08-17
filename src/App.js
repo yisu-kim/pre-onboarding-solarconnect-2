@@ -11,6 +11,7 @@ function App() {
   const [date, setDate] = useState(new Date());
   const [inputNumbers, setInputNumbers] = useState('');
   const [numbers, setNumbers] = useState([]);
+  const [message, setMessage] = useState('');
   const [showDescending, setShowDescending] = useState(true);
 
   useEffect(() => {
@@ -33,7 +34,15 @@ function App() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    setNumbers(checkInputNumbers(inputNumbers));
+    const checked = checkInputNumbers(inputNumbers);
+    if (!checked) {
+      setMessage('숫자를 둘 이상 입력해주세요.');
+      return;
+    } else {
+      setMessage('');
+    }
+
+    setNumbers(checked);
     setInputNumbers([]);
     setShowDescending(false);
   };
@@ -47,6 +56,7 @@ function App() {
         handleChange={handleChange}
         handleSubmit={handleSubmit}
         showDescending={showDescending}
+        message={message}
       />
       <AscendingSort numbers={numbers} />
       <DescendingSort numbers={numbers} showDescending={showDescending} />
@@ -60,5 +70,8 @@ export default App;
 const { Container } = style;
 
 const checkInputNumbers = (inputNumbers) => {
-  return inputNumbers.match(/\d+/g).map((number) => parseInt(number));
+  const onlyNumbers = inputNumbers.match(/\d+/g);
+  if (onlyNumbers && onlyNumbers.length > 1) {
+    return onlyNumbers.map((number) => parseInt(number));
+  }
 };
