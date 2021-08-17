@@ -16,9 +16,9 @@ export const GlobalStyles = createGlobalStyle`
         font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
         font-size: 14px;
         background-color: #fff;
-        color: #000;
+        color: #636363;
         display: flex;
-        width: 1000px;
+        min-width: 1000px;
         justify-content: center;
         align-items: center;
         margin: 0 auto;

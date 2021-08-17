@@ -17,15 +17,15 @@ const Input = styled.input.attrs({
 const Button = styled.button`
   width: 500px;
   height: 60px;
-  border: 1px solid #2146b3;
+  border: 1px solid #549ab5;
   border-radius: 5px;
   font-size: 24px;
   font-weight: 400;
-  color: #2146b3;
+  color: #549ab5;
   cursor: pointer;
 
   &:hover {
-    background-color: #2146b3;
+    background-color: #549ab5;
     color: #fff;
   }
 `;
