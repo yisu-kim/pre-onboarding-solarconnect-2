@@ -7,7 +7,6 @@ const items = '3 5 6 1 2 9'.split(' ').map((n) => {
 function DescendingSort() {
   const arr = [...items];
   let result = arr.slice();
-  //   const result = [...arr];
 
   for (let i = 0; i < result.length; i++) {
     for (let j = result.length - 1; j > i; j--) {
