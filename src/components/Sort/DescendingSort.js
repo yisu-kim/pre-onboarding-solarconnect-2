@@ -1,11 +1,9 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
 
-const items = '3 5 6 1 2 9'.split(' ').map((n) => {
-  return parseInt(n, 10);
-});
-
-function DescendingSort() {
-  const arr = [...items];
+function DescendingSort(props) {
+  console.log(props);
+  const arr = [...props.numbers];
   let result = arr.slice();
 
   for (let i = 0; i < result.length; i++) {
