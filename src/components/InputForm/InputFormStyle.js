@@ -33,8 +33,14 @@ const Button = styled.button`
   }
 `;
 
+const Message = styled.p`
+  margin-bottom: 20px;
+  color: #b55a54;
+`;
+
 export default {
   Form,
   Input,
   Button,
+  Message,
 };
