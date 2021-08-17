@@ -5,6 +5,7 @@ import LocaleTimer from 'components/Date/LocaleTimer';
 import InputForm from 'components/InputForm';
 import AscendingSort from 'components/Sort/AscendingSort';
 import DescendingSort from 'components/Sort/DescendingSort';
+import style from './AppStyle';
 
 function App() {
   const [date, setDate] = useState(new Date());
@@ -38,7 +39,7 @@ function App() {
   };
 
   return (
-    <div>
+    <Container>
       <Clock handleDate={handleDate} />
       <LocaleTimer date={date} locale={LOCALE.koKR} />
       <InputForm
@@ -50,11 +51,13 @@ function App() {
       <AscendingSort numbers={numbers} />
       <DescendingSort numbers={numbers} showDescending={showDescending} />
       <LocaleTimer date={date} locale={LOCALE.enUS} />
-    </div>
+    </Container>
   );
 }
 
 export default App;
+
+const { Container } = style;
 
 const checkInputNumbers = (inputNumbers) => {
   return inputNumbers.match(/\d+/g).map((number) => parseInt(number));

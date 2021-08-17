@@ -1,21 +1,24 @@
 import styled from 'styled-components';
 
-const Input = styled.input.attrs({
-  type: 'text',
-  required: true,
-  placeholder: '숫자를 입력해주세요. (예> 1,2,3,4)',
-})`
+const Form = styled.form`
   display: flex;
   flex-direction: column;
-  width: 500px;
-  height: 60px;
-  border-bottom: 1px solid gray;
-  margin: 30px 0;
-  padding-left: 20px;
+`;
+
+const Input = styled.textarea.attrs({
+  required: true,
+  placeholder: '숫자를 입력해주세요. (예> 1,2,3,4)',
+  rows: '2',
+})`
+  outline: none;
+  resize: none;
+  border: 1px solid #549ab5;
+  margin: 20px 0;
+  padding: 14px;
+  line-height: 1.5;
 `;
 
 const Button = styled.button`
-  width: 500px;
   height: 60px;
   border: 1px solid #549ab5;
   border-radius: 5px;
@@ -31,6 +34,7 @@ const Button = styled.button`
 `;
 
 export default {
+  Form,
   Input,
   Button,
 };

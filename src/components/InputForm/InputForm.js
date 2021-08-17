@@ -16,7 +16,7 @@ function InputForm({
   showDescending,
 }) {
   return (
-    <form onSubmit={handleSubmit}>
+    <Form onSubmit={handleSubmit}>
       <Input
         id="numbers"
         name="numbers"
@@ -27,10 +27,10 @@ function InputForm({
       <Button type="submit" disabled={!showDescending}>
         Sort
       </Button>
-    </form>
+    </Form>
   );
 }
 
 export default InputForm;
 
-const { Input, Button } = style;
+const { Form, Input, Button } = style;

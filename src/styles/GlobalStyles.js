@@ -18,11 +18,10 @@ export const GlobalStyles = createGlobalStyle`
         background-color: #fff;
         color: #636363;
         display: flex;
-        min-width: 1000px;
         justify-content: center;
         align-items: center;
         margin: 0 auto;
-        padding-top: 80px;
+        padding: 80px 0;
     }
     input, button {
         background-color: transparent;
