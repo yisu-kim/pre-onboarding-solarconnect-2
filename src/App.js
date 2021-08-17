@@ -1,6 +1,6 @@
 import React, { useCallback, useState } from 'react';
 import { LOCALE } from 'utils/constants';
-import LocaleTimer from 'components/LocaleTimer';
+import LocaleTimer from 'components/Date/LocaleTimer';
 import AscendingSort from 'components/Sort/AscendingSort';
 import DescendingSort from 'components/Sort/DescendingSort';
 
