@@ -6,9 +6,15 @@ InputForm.propTypes = {
   inputNumbers: PropTypes.string,
   handleChange: PropTypes.func,
   handleSubmit: PropTypes.func,
+  showDescending: PropTypes.bool,
 };
 
-function InputForm({ inputNumbers, handleChange, handleSubmit }) {
+function InputForm({
+  inputNumbers,
+  handleChange,
+  handleSubmit,
+  showDescending,
+}) {
   return (
     <form onSubmit={handleSubmit}>
       <Input
@@ -18,7 +24,9 @@ function InputForm({ inputNumbers, handleChange, handleSubmit }) {
         value={inputNumbers}
         onChange={handleChange}
       />
-      <Button type="submit">Sort</Button>
+      <Button type="submit" disabled={!showDescending}>
+        Sort
+      </Button>
     </form>
   );
 }

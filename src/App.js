@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from 'react';
+import React, { useCallback, useState, useEffect } from 'react';
 import { LOCALE } from 'utils/constants';
 import Clock from 'components/Date/Clock';
 import LocaleTimer from 'components/Date/LocaleTimer';
@@ -10,6 +10,16 @@ function App() {
   const [date, setDate] = useState(new Date());
   const [inputNumbers, setInputNumbers] = useState('');
   const [numbers, setNumbers] = useState([]);
+  const [showDescending, setShowDescending] = useState(true);
+
+  useEffect(() => {
+    if (numbers.length > 0) {
+      const timerId = setTimeout(() => setShowDescending(true), 3000);
+      return () => {
+        clearTimeout(timerId);
+      };
+    }
+  }, [numbers]);
 
   const handleDate = useCallback(() => {
     setDate(new Date());
@@ -24,6 +34,7 @@ function App() {
 
     setNumbers(checkInputNumbers(inputNumbers));
     setInputNumbers([]);
+    setShowDescending(false);
   };
 
   return (
@@ -34,9 +45,10 @@ function App() {
         inputNumbers={inputNumbers}
         handleChange={handleChange}
         handleSubmit={handleSubmit}
+        showDescending={showDescending}
       />
       <AscendingSort numbers={numbers} />
-      <DescendingSort numbers={numbers} />
+      <DescendingSort numbers={numbers} showDescending={showDescending} />
       <LocaleTimer date={date} locale={LOCALE.enUS} />
     </div>
   );

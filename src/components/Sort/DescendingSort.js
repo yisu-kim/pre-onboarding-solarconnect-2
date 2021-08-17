@@ -19,7 +19,7 @@ function DescendingSort(props) {
   return (
     <>
       <ResultTitle>내림차순</ResultTitle>
-      <ResultContent>{result.join(', ')}</ResultContent>
+      <ResultContent>{props.showDescending && result.join(', ')}</ResultContent>
     </>
   );
 }
