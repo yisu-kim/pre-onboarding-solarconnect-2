@@ -1,20 +1,24 @@
+import React, { useCallback, useState } from 'react';
+import { LOCALE } from 'utils/constants';
+import LocaleTimer from 'components/LocaleTimer';
 import AscendingSort from 'components/Sort/AscendingSort';
 import DescendingSort from 'components/Sort/DescendingSort';
-import React from 'react';
-import { LOCALE } from 'utils/constants';
-import { getFullLocaleDate } from 'utils/date';
 
 function App() {
+  const [date, setDate] = useState(new Date());
+
+  const handleDate = useCallback(() => {
+    setDate(new Date());
+  }, []);
+
   return (
     <div>
-      <p>한국: {getFullLocaleDate(NOW, LOCALE.koKR)}</p>
+      <LocaleTimer date={date} locale={LOCALE.koKR} handleDate={handleDate} />
       <AscendingSort />
       <DescendingSort />
-      <p>미국: {getFullLocaleDate(NOW, LOCALE.enUS)}</p>
+      <LocaleTimer date={date} locale={LOCALE.enUS} />
     </div>
   );
 }
 
 export default App;
-
-const NOW = new Date();
