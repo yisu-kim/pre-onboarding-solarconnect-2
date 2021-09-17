@@ -8,7 +8,7 @@ const Form = styled.form`
 const Input = styled.textarea.attrs({
   required: true,
   placeholder: '숫자를 입력해주세요. (예> 1,2,3,4)',
-  rows: '2',
+  rows: 2,
 })`
   outline: none;
   resize: none;
