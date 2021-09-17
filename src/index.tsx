@@ -5,8 +5,8 @@ import App from './App';
 
 ReactDOM.render(
   <>
-    <GlobalStyles />
     <React.StrictMode>
+      <GlobalStyles />
       <App />
     </React.StrictMode>
   </>,
