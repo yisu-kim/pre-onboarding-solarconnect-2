@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { ChangeEvent, FormEvent } from 'react';
 import style from './InputFormStyle';
 
 interface InputFormProps {
   inputNumbers: string;
-  handleChange: () => void;
-  handleSubmit: () => void;
+  handleChange: (e: ChangeEvent<HTMLTextAreaElement>) => void;
+  handleSubmit: (e: FormEvent<HTMLFormElement>) => void;
   showDescending: boolean;
   message: string;
 }

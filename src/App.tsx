@@ -1,37 +1,45 @@
-import React, { useCallback, useState, useEffect } from 'react';
+import React, {
+  useCallback,
+  useState,
+  useEffect,
+  ChangeEvent,
+  FormEvent,
+} from 'react';
 import { LOCALE } from 'utils/constants';
 import Clock from 'components/Date/Clock';
 import LocaleTimer from 'components/Date/LocaleTimer';
 import InputForm from 'components/InputForm';
-import AscendingSort from 'components/Sort/AscendingSort';
-import DescendingSort from 'components/Sort/DescendingSort';
+import SortResult from 'components/SortResult';
 import style from './AppStyle';
 
-function App() {
+const App: React.FC = () => {
   const [date, setDate] = useState(new Date());
   const [inputNumbers, setInputNumbers] = useState('');
-  const [numbers, setNumbers] = useState([]);
+  const [numbers, setNumbers] = useState<number[]>([]);
   const [message, setMessage] = useState('');
-  const [showDescending, setShowDescending] = useState(true);
+  const [showResult, setShowResult] = useState(true);
+
+  const handleDate = useCallback(() => {
+    setDate(new Date());
+  }, []);
 
   useEffect(() => {
     if (numbers.length > 0) {
-      const timerId = setTimeout(() => setShowDescending(true), 3000);
+      const timerId: NodeJS.Timeout = setTimeout(
+        () => setShowResult(true),
+        3000,
+      );
       return () => {
         clearTimeout(timerId);
       };
     }
   }, [numbers]);
 
-  const handleDate = useCallback(() => {
-    setDate(new Date());
-  }, []);
-
-  const handleChange = (e) => {
+  const handleChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
     setInputNumbers(e.target.value);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     const checked = checkInputNumbers(inputNumbers);
@@ -43,8 +51,8 @@ function App() {
     }
 
     setNumbers(checked);
-    setInputNumbers([]);
-    setShowDescending(false);
+    setInputNumbers('');
+    setShowResult(false);
   };
 
   return (
@@ -55,23 +63,29 @@ function App() {
         inputNumbers={inputNumbers}
         handleChange={handleChange}
         handleSubmit={handleSubmit}
-        showDescending={showDescending}
+        showDescending={showResult}
         message={message}
       />
-      <AscendingSort numbers={numbers} />
-      <DescendingSort numbers={numbers} showDescending={showDescending} />
+      <SortResult order="ascending" numbers={numbers} />
+      <SortResult
+        order="descending"
+        numbers={numbers}
+        hasDelay={true}
+        showResult={showResult}
+      />
       <LocaleTimer date={date} locale={LOCALE.enUS} />
     </Container>
   );
-}
+};
 
 export default App;
 
 const { Container } = style;
 
-const checkInputNumbers = (inputNumbers) => {
+const checkInputNumbers = (inputNumbers: string): number[] | null => {
   const onlyNumbers = inputNumbers.match(/\d+/g);
   if (onlyNumbers && onlyNumbers.length > 1) {
     return onlyNumbers.map((number) => parseInt(number));
   }
+  return null;
 };
