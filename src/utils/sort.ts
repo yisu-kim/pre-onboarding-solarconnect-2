@@ -22,7 +22,7 @@ export const descendingBubbleSort = (arr: number[]): number[] => {
   for (let i = 0; i < result.length; i++) {
     for (let j = result.length - 1; j > i; j--) {
       if (result[j] > result[j - 1]) {
-        const value = arr[j];
+        const value = result[j];
         result[j] = result[j - 1];
         result[j - 1] = value;
       }
